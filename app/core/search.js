@@ -11,12 +11,12 @@ let stemmers = null;
 
 function getLunr (config) {
   if (instance === null) {
-    instance = require('lunr');
-    require('lunr-languages/lunr.stemmer.support')(instance);
-    require('lunr-languages/lunr.multi')(instance);
-    config.searchExtraLanguages.forEach(lang =>
-      require('lunr-languages/lunr.' + lang)(instance)
-    );
+    instance = require('./lunr.js');
+    //require('lunr-languages/lunr.stemmer.support')(instance);
+    //require('lunr-languages/lunr.multi')(instance);
+    //config.searchExtraLanguages.forEach(lang =>
+    //  require('lunr-languages/lunr.' + lang)(instance)
+    //);
   }
   return instance;
 }
@@ -42,7 +42,7 @@ async function handler (query, config) {
 
   const lunrInstance = getLunr(config);
   const idx = lunrInstance(function () {
-    this.use(getStemmers(config));
+    //this.use(getStemmers(config));
     this.field('title');
     this.field('body');
     this.ref('id');

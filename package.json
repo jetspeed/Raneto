@@ -74,7 +74,8 @@
     "sweetalert2": "8.18.3",
     "underscore": "1.9.1",
     "underscore.string": "3.3.5",
-    "validator": "11.1.0"
+    "validator": "11.1.0",
+    "nodejieba": "^2.0.0"
   },
   "devDependencies": {
     "always-tail": "0.2.0",
